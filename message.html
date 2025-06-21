@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome, Freshers!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="greeting">Loading...</h1>
+    <p id="line1">Loading...</p>
+    <p id="line2"></p>
+    <p id="line3"></p>
+    <p id="line4"></p>
+    <p id="closing"></p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name') || 'Freshers';
+    document.getElementById('greeting').innerText = 'Dear ' + name + ',';
+    document.getElementById('line1').innerText = 'Welcome to Level 2 of MIST’s Computer Science family! We’re thrilled to have you join our vibrant community of curious minds and future innovators.';
+    document.getElementById('line2').innerText = 'As you step into this new chapter, remember that every late‑night coding session, every debugging triumph, and every collaborative project is a chance to grow—not just as engineers, but as friends and leaders.';
+    document.getElementById('line3').innerText = 'Here, you’ll find mentors in your professors, teammates in your classmates, and lifelong memories in every corridor. Don’t be afraid to ask questions, share your ideas, or even stumble now and then—because every challenge you face will make your success that much sweeter.';
+    document.getElementById('line4').innerText = 'So take a deep breath, open your laptop, and let your passion guide you. We’re excited to see the amazing things you’ll create. Welcome aboard—your journey starts now!';
+    document.getElementById('closing').innerHTML = 'With warmest wishes,<br>Level 2 CSE Seniors';
+  </script>
+</body>
+</html>
