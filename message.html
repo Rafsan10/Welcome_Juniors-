@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome, Freshers!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1 id="greeting">Dear ___</h1>
-    <div id="message" style="white-space: pre-wrap;">
-Dear ___,
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome, Freshers!</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="greeting">Dear ___</h1>
+      <div id="message" style="white-space: pre-wrap;">
+        Welcome to MIST! We’re your CSE 24 seniors, and we couldn’t be happier to have you here. The first few days will
+        feel new: new faces, new routines, and maybe a bit of confusion, but that’s all part of the experience. You’ll
+        find your rhythm, make friends, and build memories that last a lifetime.
 
-Welcome to MIST! We’re your CSE 24 seniors, and we couldn’t be happier to have you here. The first few days will feel new: new faces, new routines, and maybe a bit of confusion, but that’s all part of the experience. You’ll find your rhythm, make friends, and build memories that last a lifetime.
+        University isn’t just lectures and labs, it’s late night laughs, last minute submissions, and the people who’ve
+        got your back. We’re here to cheer you on, guide you through the excitement, and celebrate every win big or
+        small.
 
-University isn’t just lectures and labs, it’s late night laughs, last minute submissions, and the people who’ve got your back. We’re here to cheer you on, guide you through the excitement, and celebrate every win big or small.
+        So dive in, try things, ask questions, and don’t be afraid to stumble. You’re officially part of our family now,
+        and we can’t wait to share this journey with you.
 
-So dive in, try things, ask questions, and don’t be afraid to stumble. You’re officially part of our family now, and we can’t wait to share this journey with you.
-
-With lots of senior love,
-Your CSE 24 Seniors
+        With lots of senior love,
+        Your CSE 24 Seniors
+      </div>
     </div>
-  </div>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name') || 'Freshers';
-    document.getElementById('greeting').innerText = 'Dear ' + name + ',';
-    const raw = document.getElementById('message').innerText;
-    document.getElementById('message').innerText = raw.replace(/___/g, name);
-  </script>
-</body>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name') || 'Freshers';
+      document.getElementById('greeting').innerText = 'Dear ' + name + ',';
+      const raw = document.getElementById('message').innerText;
+      document.getElementById('message').innerText = raw.replace(/___/g, name);
+    </script>
+  </body>
 </html>
