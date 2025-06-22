@@ -5,27 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome, Freshers!</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
+  <div class="bg-shapes"></div>
+  <div class="container message-container">
     <h1 id="greeting">Dear ___</h1>
-    <div id="message" style="white-space: pre-wrap;">
-Welcome to MIST! We’re your CSE 24 seniors, and we couldn’t be happier to have you here. The first few days will feel new: new faces, new routines, and maybe a bit of confusion, but that’s all part of the experience. You’ll find your rhythm, make friends, and build memories that last a lifetime.
-
-University isn’t just lectures and labs, it’s late night laughs, last minute submissions, and the people who’ve got your back. We’re here to cheer you on, guide you through the excitement, and celebrate every win big or small.
-
-So dive in, try things, ask questions, and don’t be afraid to stumble. You’re officially part of our family now, and we can’t wait to share this journey with you.
-
-With lots of senior love,
-Your CSE 24 Seniors
-    </div>
+    <div id="message" style="white-space: pre-wrap;"></div>
   </div>
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name') || 'Freshers';
-    document.getElementById('greeting').innerText = 'Dear ' + name + ',';
-    const raw = document.getElementById('message').innerText;
-    document.getElementById('message').innerText = raw.replace(/___/g, name);
+    document.addEventListener('DOMContentLoaded', () => {
+      // Default light theme
+      let theme = 'light';
+      document.documentElement.classList.add('light-theme');
+      // Click anywhere toggles theme
+      document.body.addEventListener('click', () => {
+        theme = theme === 'light' ? 'dark' : 'light';
+        document.documentElement.classList.toggle('dark-theme', theme === 'dark');
+        document.documentElement.classList.toggle('light-theme', theme === 'light');
+      });
+      // Greeting and message
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get('name') || 'Freshers';
+      document.getElementById('greeting').innerText = 'Dear ' + name + ',';
+      document.getElementById('message').innerText = `
+Welcome to MIST! We’re your CSE 24 seniors, and we couldn’t be happier to have you here.
+
+The first few days will feel new: new faces, new routines, and maybe a bit of confusion, but that’s all part of the experience. You’ll find your rhythm, make friends, and build memories that last a lifetime.
+
+University isn’t just lectures and labs, it’s late night laughs, last minute submissions, and the people who’ve got your back. We’re here to cheer you on and celebrate every win.
+
+So dive in, try things, ask questions, and don’t be afraid to stumble. You’re officially part of our family now.
+
+With love,
+Your CSE 24 Seniors 🎉`;
+      // Falling items: emojis and context words with lower opacity
+      const items = ['🎈','🌟','✨','🥳','Lab Report','Bug','Mid','CG GG','All-nighter','Stack Overflow','Rubber Duck','Finals','Syntax Error','Coffee','Deadline','Group Project','404','Git Push','Ctrl+C','Ctrl+V'];
+      function createItem() {
+        const el = document.createElement('div');
+        el.classList.add('emoji');
+        const text = items[Math.floor(Math.random()*items.length)];
+        el.innerText = text;
+        const angle = Math.random()*60 - 30;
+        el.style.left = Math.random()*100 + 'vw';
+        el.style.transform = 'rotate(' + angle + 'deg)';
+        el.style.animationDuration = 4 + Math.random()*3 + 's';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 7000);
+      }
+      setInterval(createItem, 500);
+    });
   </script>
 </body>
 </html>
