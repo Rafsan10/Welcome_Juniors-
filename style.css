@@ -1,9 +1,17 @@
-/* Mobile-friendly viewport ensured by meta tag */
+
+/* Animated gradient background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,18 +22,37 @@ body {
 .container {
   background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   text-align: left;
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
   margin: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 h1, h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background: #ff6f91;
+  border-radius: 2px;
 }
 
 p {
@@ -42,6 +69,12 @@ input[type="text"] {
   border-radius: 8px;
   font-size: 1.1rem;
   box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+input[type="text"]:focus {
+  border-color: #a18cd1;
+  outline: none;
+  box-shadow: 0 0 5px rgba(161, 140, 209, 0.5);
 }
 
 button {
@@ -53,11 +86,11 @@ button {
   color: white;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-
 button:hover {
-  background: #ff4a6e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255, 111, 145, .3);
 }
 
 @media (max-width: 400px) {
