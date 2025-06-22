@@ -109,6 +109,8 @@ body {
   max-width: 400px;
   text-align: center;
   animation: fadeIn 1s ease-out;
+  margin-bottom: 70px;
+    /* 👈 alternative */
 }
 
 @keyframes fadeIn {
