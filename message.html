@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light-theme">
   <div class="bg-shapes"></div>
   <div class="container message-container">
     <h1 id="greeting">Dear ___</h1>
@@ -15,16 +15,7 @@
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Default light theme
-      let theme = 'light';
       document.documentElement.classList.add('light-theme');
-      // Click anywhere toggles theme
-      document.body.addEventListener('click', () => {
-        theme = theme === 'light' ? 'dark' : 'light';
-        document.documentElement.classList.toggle('dark-theme', theme === 'dark');
-        document.documentElement.classList.toggle('light-theme', theme === 'light');
-      });
-      // Greeting and message
       const params = new URLSearchParams(window.location.search);
       const name = params.get('name') || 'Freshers';
       document.getElementById('greeting').innerText = 'Dear ' + name + ',';
@@ -39,13 +30,12 @@ So dive in, try things, ask questions, and don’t be afraid to stumble. You’r
 
 With love,
 Your CSE 24 Seniors 🎉`;
-      // Falling items: emojis and context words with lower opacity
+
       const items = ['🎈','🌟','✨','🥳','Lab Report','Bug','Mid','CG GG','All-nighter','Stack Overflow','Rubber Duck','Finals','Syntax Error','Coffee','Deadline','Group Project','404','Git Push','Ctrl+C','Ctrl+V'];
       function createItem() {
         const el = document.createElement('div');
         el.classList.add('emoji');
-        const text = items[Math.floor(Math.random()*items.length)];
-        el.innerText = text;
+        el.innerText = items[Math.floor(Math.random()*items.length)];
         const angle = Math.random()*60 - 30;
         el.style.left = Math.random()*100 + 'vw';
         el.style.transform = 'rotate(' + angle + 'deg)';
