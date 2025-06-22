@@ -3,7 +3,7 @@
   --bg-shape-1: rgba(255, 255, 255, 0.4);
   --bg-shape-2: rgba(200, 230, 250, 0.4);
   --text-color: #333;
-  --container-bg: rgba(255, 255, 255, 0.6);
+  --container-bg: rgba(255, 255, 255, .3);
   --container-shadow: rgba(0, 0, 0, 0.1);
   --accent-color: #ff6f91;
   --input-bg: #fff;
