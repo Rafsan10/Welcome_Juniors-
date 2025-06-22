@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Enter Your Name</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body class="light-theme">
-  <div class="bg-shapes"></div>
-  <div class="container">
-    <h2>🎓 CSE‑25 Freshers</h2>
-    <p class="subtitle">What should we call you?</p>
-    <form id="form">
-      <input type="text" id="name" placeholder="Enter your name or nickname" required />
-      <button type="submit">Join the Family</button>
-    </form>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.documentElement.classList.add('light-theme');
-      document.getElementById('form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        if (name) {
-          window.location.href = 'message.html?name=' + encodeURIComponent(name);
-        }
-      });
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Enter Your Name</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="light-theme">
+    <div class="bg-shapes"></div>
+    <div class="container">
+      <h2>🎓 Dear CSE‑25 Fresher</h2>
+      <p class="subtitle">What should we call you?</p>
+      <form id="form">
+        <input type="text" id="name" placeholder="Enter your name or nickname" required />
+        <button type="submit">Join the Family</button>
+      </form>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.documentElement.classList.add('light-theme');
+        document.getElementById('form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          if (name) {
+            window.location.href = 'message.html?name=' + encodeURIComponent(name);
+          }
+        });
 
-      // Falling names
-      const names = ['Ashik', 'Tanha', 'Nusrat', 'Shuvo', 'Tasin', 'Fahim', 'Ratul', 'Nabil', 'Faria', 'Mehedi'];
-      function createName() {
-        const el = document.createElement('div');
-        el.classList.add('emoji');
-        el.innerText = names[Math.floor(Math.random() * names.length)];
-        const angle = Math.random() * 60 - 30;
-        el.style.left = Math.random() * 100 + 'vw';
-        el.style.transform = 'rotate(' + angle + 'deg)';
-        el.style.animationDuration = 4 + Math.random() * 3 + 's';
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), 7000);
-      }
-      setInterval(createName, 600);
-    });
-  </script>
-</body>
+        // Falling names
+        const names = ['Ashik', 'Tanha', 'Nusrat', 'Shuvo', 'Tasin', 'Fahim', 'Ratul', 'Nabil', 'Faria', 'Mehedi'];
+        function createName() {
+          const el = document.createElement('div');
+          el.classList.add('emoji');
+          el.innerText = names[Math.floor(Math.random() * names.length)];
+          const angle = Math.random() * 60 - 30;
+          el.style.left = Math.random() * 100 + 'vw';
+          el.style.transform = 'rotate(' + angle + 'deg)';
+          el.style.animationDuration = 4 + Math.random() * 3 + 's';
+          document.body.appendChild(el);
+          setTimeout(() => el.remove(), 7000);
+        }
+        setInterval(createName, 600);
+      });
+    </script>
+  </body>
 </html>
