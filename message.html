@@ -9,32 +9,25 @@
 <body>
   <div class="container">
     <h1 id="greeting">Dear ___</h1>
-    <p id="message" style="white-space: pre-wrap;"></p>
+    <div id="message" style="white-space: pre-wrap;">
+Dear ___,
+
+Welcome to MIST! We’re your CSE 24 seniors, and we couldn’t be happier to have you here. The first few days will feel new: new faces, new routines, and maybe a bit of confusion, but that’s all part of the experience. You’ll find your rhythm, make friends, and build memories that last a lifetime.
+
+University isn’t just lectures and labs, it’s late night laughs, last minute submissions, and the people who’ve got your back. We’re here to cheer you on, guide you through the excitement, and celebrate every win big or small.
+
+So dive in, try things, ask questions, and don’t be afraid to stumble. You’re officially part of our family now, and we can’t wait to share this journey with you.
+
+With lots of senior love,
+Your CSE 24 Seniors
+    </div>
   </div>
   <script>
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name') || 'Freshers';
     document.getElementById('greeting').innerText = 'Dear ' + name + ',';
-    document.getElementById('message').innerText = `
-Welcome to MIST. This is the start of something really special, and we’re so glad you’re here. We’re your immediate seniors, and even though we don’t have everything figured out, we’ll be right here with you, cheering you on and helping however we can.
-
-The first few days might feel a little strange. New faces, new rules, new everything. It’s okay to feel lost. We did too. But soon enough, you’ll find your rhythm, make friends, and start collecting moments that’ll stay with you forever.
-
-University life is not just about classes and labs. It’s about the late-night laughter, the last-minute submissions, the quiet walks, the random breakdowns, and the people who help you through them. And in that mess of it all, you’ll grow in ways you never expected.
-
-Yeah, some traditions might seem a bit much at first. We totally get it. But give it time. There’s a kind of charm in them. One day, you’ll look back and realize how those same things made you fall in love with this place.
-
-We don’t want to be just “the batch above.” We want to be the seniors you feel comfortable with, the ones who’ll hype you up, guide you when needed, and be there when stuff gets tough. And most of all, the ones you’ll be proud to call yours. So come on in, junior. You’re officially part of the fam now.
-
-Your four-year journey has just started and boy is it gonna be some ride. We’ll be around for the next three years, and we genuinely hope we get to share some laughs, a few struggles, and lots of beautiful moments together.
-
-Try stuff. Fail. Try again. Ask questions. Get involved. Take care of yourself. And don’t forget to enjoy the little things along the way.
-
-We’re really happy you’re here. Let’s make this ride unforgettable.
-
-With love and a whole lotta chaotic senior energy,
-Your immediate seniors from CSE-24
-    `;
+    const raw = document.getElementById('message').innerText;
+    document.getElementById('message').innerText = raw.replace(/___/g, name);
   </script>
 </body>
 </html>
