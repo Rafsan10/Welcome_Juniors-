@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome, Freshers!</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
-<body class="light-theme">
-  <div class="bg-shapes"></div>
-  <div class="container message-container">
-    <h1 id="greeting">Dear ___</h1>
-    <div id="message" style="white-space: pre-wrap;"></div>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.documentElement.classList.add('light-theme');
-      const params = new URLSearchParams(window.location.search);
-      const name = params.get('name') || 'Freshers';
-      document.getElementById('greeting').innerText = 'Dear ' + name + ',';
-      document.getElementById('message').innerText = `
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome, Freshers!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  </head>
+  <body class="light-theme" style="overflow-y:auto; max-height:100vh;">
+    <div class="bg-shapes"></div>
+    <div class="container message-container">
+      <h1 id="greeting">Dear ___</h1>
+      <div id="message" style="white-space: pre-wrap;"></div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.documentElement.classList.add('light-theme');
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name') || 'Freshers';
+        document.getElementById('greeting').innerText = 'Dear ' + name + ',';
+        document.getElementById('message').innerText = `
 Welcome to MIST! We’re your CSE 24 seniors, and we couldn’t be happier to have you here.
 
 The first few days will feel new: new faces, new routines, and maybe a bit of confusion, but that’s all part of the experience. You’ll find your rhythm, make friends, and build memories that last a lifetime.
@@ -31,20 +32,20 @@ So dive in, try things, ask questions, and don’t be afraid to stumble. You’r
 With love,
 Your CSE 24 Seniors 🎉`;
 
-      const items = ['🎈','🌟','✨','🥳','Lab Report','Bug','Mid','CG GG','All-nighter','Stack Overflow','Rubber Duck','Finals','Syntax Error','Coffee','Deadline','Group Project','404','Git Push','Ctrl+C','Ctrl+V'];
-      function createItem() {
-        const el = document.createElement('div');
-        el.classList.add('emoji');
-        el.innerText = items[Math.floor(Math.random()*items.length)];
-        const angle = Math.random()*60 - 30;
-        el.style.left = Math.random()*100 + 'vw';
-        el.style.transform = 'rotate(' + angle + 'deg)';
-        el.style.animationDuration = 4 + Math.random()*3 + 's';
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), 7000);
-      }
-      setInterval(createItem, 500);
-    });
-  </script>
-</body>
+        const items = ['🎈', '🌟', '✨', '🥳', 'Lab Report', 'Bug', 'Mid', 'CG GG', 'All-nighter', 'Stack Overflow', 'Rubber Duck', 'Finals', 'Syntax Error', 'Coffee', 'Deadline', 'Group Project', '404', 'Git Push', 'Ctrl+C', 'Ctrl+V'];
+        function createItem() {
+          const el = document.createElement('div');
+          el.classList.add('emoji');
+          el.innerText = items[Math.floor(Math.random() * items.length)];
+          const angle = Math.random() * 60 - 30;
+          el.style.left = Math.random() * 100 + 'vw';
+          el.style.transform = 'rotate(' + angle + 'deg)';
+          el.style.animationDuration = 4 + Math.random() * 3 + 's';
+          document.body.appendChild(el);
+          setTimeout(() => el.remove(), 7000);
+        }
+        setInterval(createItem, 500);
+      });
+    </script>
+  </body>
 </html>
