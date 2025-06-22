@@ -8,22 +8,33 @@
 </head>
 <body>
   <div class="container">
-    <h1 id="greeting">Loading...</h1>
-    <p id="line1">Loading...</p>
-    <p id="line2"></p>
-    <p id="line3"></p>
-    <p id="line4"></p>
-    <p id="closing"></p>
+    <h1 id="greeting">Dear ___</h1>
+    <p id="message" style="white-space: pre-wrap;"></p>
   </div>
   <script>
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name') || 'Freshers';
     document.getElementById('greeting').innerText = 'Dear ' + name + ',';
-    document.getElementById('line1').innerText = 'Welcome to Level 2 of MIST’s Computer Science family! We’re thrilled to have you join our vibrant community of curious minds and future innovators.';
-    document.getElementById('line2').innerText = 'As you step into this new chapter, remember that every late‑night coding session, every debugging triumph, and every collaborative project is a chance to grow—not just as engineers, but as friends and leaders.';
-    document.getElementById('line3').innerText = 'Here, you’ll find mentors in your professors, teammates in your classmates, and lifelong memories in every corridor. Don’t be afraid to ask questions, share your ideas, or even stumble now and then—because every challenge you face will make your success that much sweeter.';
-    document.getElementById('line4').innerText = 'So take a deep breath, open your laptop, and let your passion guide you. We’re excited to see the amazing things you’ll create. Welcome aboard—your journey starts now!';
-    document.getElementById('closing').innerHTML = 'With warmest wishes,<br>Level 2 CSE Seniors';
+    document.getElementById('message').innerText = `
+Welcome to MIST. This is the start of something really special, and we’re so glad you’re here. We’re your immediate seniors, and even though we don’t have everything figured out, we’ll be right here with you, cheering you on and helping however we can.
+
+The first few days might feel a little strange. New faces, new rules, new everything. It’s okay to feel lost. We did too. But soon enough, you’ll find your rhythm, make friends, and start collecting moments that’ll stay with you forever.
+
+University life is not just about classes and labs. It’s about the late-night laughter, the last-minute submissions, the quiet walks, the random breakdowns, and the people who help you through them. And in that mess of it all, you’ll grow in ways you never expected.
+
+Yeah, some traditions might seem a bit much at first. We totally get it. But give it time. There’s a kind of charm in them. One day, you’ll look back and realize how those same things made you fall in love with this place.
+
+We don’t want to be just “the batch above.” We want to be the seniors you feel comfortable with, the ones who’ll hype you up, guide you when needed, and be there when stuff gets tough. And most of all, the ones you’ll be proud to call yours. So come on in, junior. You’re officially part of the fam now.
+
+Your four-year journey has just started and boy is it gonna be some ride. We’ll be around for the next three years, and we genuinely hope we get to share some laughs, a few struggles, and lots of beautiful moments together.
+
+Try stuff. Fail. Try again. Ask questions. Get involved. Take care of yourself. And don’t forget to enjoy the little things along the way.
+
+We’re really happy you’re here. Let’s make this ride unforgettable.
+
+With love and a whole lotta chaotic senior energy,
+Your immediate seniors from CSE-24
+    `;
   </script>
 </body>
 </html>
