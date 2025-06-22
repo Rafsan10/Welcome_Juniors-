@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Enter Your Name</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="container">
-      <h2>Dear CSE‑25 Fresher: What should we call you?</h2>
-      <form id="form">
-        <input type="text" id="name" placeholder="Enter your name or nickname" required />
-        <button type="submit">Continue</button>
-      </form>
-    </div>
-    <script>
-      document.getElementById('form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        if (name) {
-          window.location.href = 'message.html?name=' + encodeURIComponent(name);
-        }
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enter Your Name</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>CSE‑25 Freshers: What should we call you?</h2>
+    <form id="form">
+      <input type="text" id="name" placeholder="Enter your name or nickname" required />
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      if (name) {
+        window.location.href = 'message.html?name=' + encodeURIComponent(name);
+      }
+    });
+  </script>
+</body>
 </html>
